@@ -1,0 +1,19 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <form [formGroup]="adminForm" (submit)="getUserData($event)" novalidate>
+        <mat-form-field>
+          <mat-label>User Name</mat-label>
+          <input matInput formControlName="username" [(ngModel)]="user.username" placeholder="Enter Admin ID..." required>
+          <mat-error>User Name must be required.</mat-error>
+        </mat-form-field><br>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" [(ngModel)]="user.password" placeholder="Enter Password..." required>
+          <mat-error>Password must be required.</mat-error>
+        </mat-form-field><br>
+        <button mat-raised-button [disabled]="!adminForm.valid">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
